@@ -3,25 +3,26 @@ pipeline {
   stages {
     stage('Download') {
       steps {
-        sh 'echo "Stage Download"'
+			sh 'echo "Stage Download"'
+			input 'Continue to next stage ?'
       }
     }
 
     stage('Compile') {
       steps {
-        sh 'echo "Stage Compile"'
+			sh 'echo "Stage Compile"'
       }
     }
 
     stage('Test') {
       steps {
-        sh 'echo "Stage Test"'
+			sh 'echo "Stage Test"'
       }
     }
 
     stage('Deliver') {
       steps {
-        sh 'echo "Stage Deliver"'
+			sh 'echo "Stage Deliver"'
       }
     }
 
