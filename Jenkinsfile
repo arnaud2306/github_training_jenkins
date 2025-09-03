@@ -1,7 +1,7 @@
 pipeline {
 	agent any
 	parameters {
-		string(name:'File',defaultValue:'File_to_download.txt',description:"File to download")
+		string(name:'File',defaultValue:"File_to_download.txt",description:"File to download")
 	}	
 	stages {
 		stage('Download') {
