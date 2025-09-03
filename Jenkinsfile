@@ -6,7 +6,15 @@ pipeline {
 	stages {
 		stage('Download') {
 			steps {
-//				sh "echo 'Stage Download ${params.File}'"
+				script {
+					def userText = input(
+						id: 'UserInput', message: 'File to download :',
+						parameters: [
+							string(defaultValue: 'fichier.txt', description: 'File to download', name: 'FileName')
+						]
+					)
+				}
+				echo "File to download : ${FileName}"
 				input 'Continue to next stage ?'
 			}
 		}
