@@ -6,7 +6,7 @@ pipeline {
 	stages {
 		stage('Download') {
 			steps {
-				sh 'echo "Stage Download ${params.File}"'
+				sh "echo 'Stage Download ${params.File}'"
 				input 'Continue to next stage ?'
 			}
 		}
