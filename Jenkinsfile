@@ -14,7 +14,7 @@ pipeline {
 						]
 					)
 				}
-				sh 'echo "File to download : ${FileName}"'
+				sh 'echo "File to download : ${params.FileName}"'
 				input 'Continue to next stage ?'
 			}
 		}
