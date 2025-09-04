@@ -3,9 +3,9 @@ pipeline {
 	environment {
 		FileName = 'FileName.txt'
 	}
-//	parameters {
-//		string name: 'FILENAME', description: 'File to download', defaultValue: 'fichier.txt'
-//	}
+	parameters {
+		string name: 'FILENAME', description: 'File to download', defaultValue: 'fichier.txt'
+	}
 	stages {
 		stage('Download') {
 			steps {
@@ -17,8 +17,8 @@ pipeline {
 						]
 					)
 				}
-				echo "File to download : ${FileName}"
-//				echo "File to download : ${FILENAME}"
+				echo "File to download environment : ${FileName}"
+				echo "File to download parameters : ${FILENAME}"
 				input 'Continue to next stage ?'
 			}
 		}
