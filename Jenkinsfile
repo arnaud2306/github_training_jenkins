@@ -1,10 +1,10 @@
 pipeline {
 	agent any
 	environment {
-		FileName = 'fichier_environment.txt'
+		filename_environment = 'fichier_environment.txt'
 	}
 	parameters {
-		string name: 'FILENAME', description: 'File to download', defaultValue: 'fichier_parameters.txt'
+		string name: 'filename_parameters', description: 'File to download', defaultValue: 'fichier_parameters.txt'
 	}
 	stages {
 		stage('Download') {
@@ -17,8 +17,8 @@ pipeline {
 						]
 					)
 				}
-				echo "File to download environment : ${FileName}"
-				echo "File to download parameters : ${FILENAME}"
+				echo "File to download environment : ${filename_environment}"
+				echo "File to download parameters : ${filename_parameters}"
 				input 'Continue to next stage ?'
 			}
 		}
