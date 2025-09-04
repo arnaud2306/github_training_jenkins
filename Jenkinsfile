@@ -13,8 +13,8 @@ pipeline {
 							string(defaultValue: 'fichier.txt', description: 'File to download', name: 'FileName')
 						]
 					)
-					echo "File to download : ${FileName}"
 				}
+				sh 'echo "File to download : ${FileName}"'
 				input 'Continue to next stage ?'
 			}
 		}
