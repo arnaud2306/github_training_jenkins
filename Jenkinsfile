@@ -18,7 +18,7 @@ pipeline {
 					)
 				}
 				echo "File to download environment : ${filename_environment}"
-				echo "File to download parameters : ${filename_parameters}"
+				echo "File to download parameters : ${params.filename_parameters}"
 				input 'Continue to next stage ?'
 			}
 		}
