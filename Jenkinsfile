@@ -1,5 +1,8 @@
 pipeline {
 	agent any
+	environment {
+		FileName = 'FileName.txt'
+	}
 //	parameters {
 //		string name: 'FILENAME', description: 'File to download', defaultValue: 'fichier.txt'
 //	}
@@ -14,6 +17,7 @@ pipeline {
 						]
 					)
 				}
+				echo "File to download : ${FileName}"
 //				echo "File to download : ${FILENAME}"
 				input 'Continue to next stage ?'
 			}
