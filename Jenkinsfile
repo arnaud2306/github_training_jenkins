@@ -1,20 +1,20 @@
 pipeline {
 	agent any
-	parameters {
-		string name: 'FILENAME', description: 'File to download', defaultValue: 'fichier.txt'
-	}
+//	parameters {
+//		string name: 'FILENAME', description: 'File to download', defaultValue: 'fichier.txt'
+//	}
 	stages {
 		stage('Download') {
 			steps {
-//				script {
-//					def userText = input(
-//						id: 'UserInput', message: 'File to download :',
-//						parameters: [
-//							string(defaultValue: 'fichier.txt', description: 'File to download', name: 'FileName')
-//						]
-//					)
-//				}
-				echo "File to download : ${FILENAME}"
+				script {
+					def userText = input(
+						id: 'UserInput', message: 'File to download :',
+						parameters: [
+							string(defaultValue: 'fichier.txt', description: 'File to download', name: 'FileName')
+						]
+					)
+				}
+//				echo "File to download : ${FILENAME}"
 				input 'Continue to next stage ?'
 			}
 		}
