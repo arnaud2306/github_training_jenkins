@@ -1,8 +1,5 @@
 pipeline {
 	agent any
-	parameters {
-		string(name:'File',defaultValue:"File_to_download.txt",description:"File to download")
-	}	
 	stages {
 		stage('Download') {
 			steps {
@@ -14,7 +11,7 @@ pipeline {
 						]
 					)
 				}
-				sh 'echo "File to download : ${params.FileName}"'
+				echo "File to download : ${params.FileName}"
 				input 'Continue to next stage ?'
 			}
 		}
