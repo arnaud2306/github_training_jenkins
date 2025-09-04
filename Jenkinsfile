@@ -1,10 +1,10 @@
 pipeline {
 	agent any
 	environment {
-		FileName = 'FileName.txt'
+		FileName = 'fichier_environment.txt'
 	}
 	parameters {
-		string name: 'FILENAME', description: 'File to download', defaultValue: 'fichier.txt'
+		string name: 'FILENAME', description: 'File to download', defaultValue: 'fichier_parameters.txt'
 	}
 	stages {
 		stage('Download') {
@@ -13,7 +13,7 @@ pipeline {
 					def userText = input(
 						id: 'UserInput', message: 'File to download :',
 						parameters: [
-							string(defaultValue: 'fichier.txt', description: 'File to download', name: 'FileName')
+							string(defaultValue: 'fichier.txt', description: 'File to download', name: 'FileName_userText')
 						]
 					)
 				}
