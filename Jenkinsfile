@@ -20,7 +20,7 @@ pipeline {
 				echo "File to download environment : ${filename_environment}"
 				echo "File to download parameters : ${params.filename_parameters}"
 				echo "FileName_userText = ${userText}"
-				sh "echo FileName_userText = ${userText}
+				sh "echo FileName_userText = ${userText}"
 
 				input 'Continue to next stage ?'
 			}
